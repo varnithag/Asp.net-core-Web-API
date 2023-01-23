@@ -6,6 +6,6 @@
         public string? Roleid { get; set; }
         public string? Rolename { get; set; }
 
-        public IEnumerable<Employee> Employees { get; set; }
+        
     }
 }
