@@ -8,7 +8,9 @@ namespace Company.API.Models.Domain
         public int Empid { get; set; }
         public string? Empname { get; set; }
         public int Empage { get; set; }
-        public int Empnumber { get; set; }
+        public string Empnumber { get; set; }
+
+        public string Emproleid { get; set; }
         
     }
 }

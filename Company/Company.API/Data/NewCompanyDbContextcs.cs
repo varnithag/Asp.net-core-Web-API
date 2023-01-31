@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Company.API.Data
 {
-    public class CompanyDbContextcs:DbContext
+    public class NewCompanyDbContextcs:DbContext
     {
-        public CompanyDbContextcs(DbContextOptions<CompanyDbContextcs> options):base(options)
+        public NewCompanyDbContextcs(DbContextOptions<NewCompanyDbContextcs> options):base(options)
         {
 
         }
