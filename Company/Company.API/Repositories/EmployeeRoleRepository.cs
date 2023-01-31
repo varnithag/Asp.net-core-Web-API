@@ -31,15 +31,12 @@ namespace Company.API.Repositories
             return Role;
         }
 
-        public async Task<IEnumerable<EmployeeRoles>> GetAll()
+        public async Task<IEnumerable<EmployeeRoles>> GetAllRoles()
         {
             return await _companyDbContextcs.EmployeeRoles.ToListAsync();
         }
 
-        public Task<IEnumerable<EmployeeRoles>> GetAllRoles()
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public async Task<EmployeeRoles> GetById(string id)
         {

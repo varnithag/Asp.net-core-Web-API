@@ -1,4 +1,4 @@
-﻿/*using Company.API.Repositories;
+﻿using Company.API.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,12 +15,12 @@ namespace Company.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllRoles() {
+        public async Task<IActionResult> GetAll() {
             var roles=await _employeeRoleRepository.GetAllRoles();
             return Ok(roles);
         }
         [HttpGet]
-        [Route("{id:string}")]
+        [Route("{id}")]
         public async Task<IActionResult> GetRoleById(string id)
         {
             var roles= await _employeeRoleRepository.GetById(id);
@@ -35,4 +35,3 @@ namespace Company.API.Controllers
 
     }
 }
-*/
