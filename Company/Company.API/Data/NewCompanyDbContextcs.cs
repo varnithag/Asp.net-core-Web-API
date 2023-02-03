@@ -10,7 +10,14 @@ namespace Company.API.Data
 
         }
 
+
         public DbSet<Employee> Employees { get; set; }
         public DbSet<EmployeeRoles> EmployeeRoles { get; set; }
+
+        public DbSet<Users> Users { get; set; }
+
+        public DbSet<Role> Roles { get; set; }
+
+        public DbSet<User_Role> User_Roles { get; set; } 
     }
 }
