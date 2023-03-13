@@ -44,7 +44,8 @@ namespace Company.API.Controllers
         [ActionName("GetEmployeeById")]
         [Authorize(Roles = "read")]
         public async Task<IActionResult> GetEmployeeById(int id)
-        {
+        {            
+            
             //get employee details by using repository
             var emp = await employeeRepository.GetById(id);
             
@@ -60,6 +61,7 @@ namespace Company.API.Controllers
 
         //Add new Employee into the table
         [HttpPost]
+        
         [Authorize(Roles = "write")]
         public async Task<IActionResult> AddEmployee(Employee employee)
         {
@@ -141,10 +143,12 @@ namespace Company.API.Controllers
 
         #region Private methods
 
+
+
         private bool ValidateAddEmployee(Employee employee)
         {
             //if entered data is null, shows error message
-            if (employee == null)
+            if (employee==null)
             {
                 ModelState.AddModelError(nameof(employee), "Entered data cannot be null");
                 return false;
@@ -157,6 +161,7 @@ namespace Company.API.Controllers
             }
 
             //if Empage is less than or equal to zero, shows error message
+                      
             if (employee.Empage <= 0)
             {
                 ModelState.AddModelError(nameof(employee.Empage), "age cannot be zero or less than zero ");

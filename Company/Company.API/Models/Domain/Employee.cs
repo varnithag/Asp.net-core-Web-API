@@ -6,7 +6,7 @@ namespace Company.API.Models.Domain
     {
         [Key]
         public int Empid { get; set; }
-        public string? Empname { get; set; }
+        public string Empname { get; set; }
         public int Empage { get; set; }
         public string Empnumber { get; set; }
 

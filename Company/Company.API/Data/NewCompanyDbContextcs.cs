@@ -5,6 +5,10 @@ namespace Company.API.Data
 {
     public class NewCompanyDbContextcs:DbContext
     {
+        public NewCompanyDbContextcs()
+        {
+
+        }
         public NewCompanyDbContextcs(DbContextOptions<NewCompanyDbContextcs> options):base(options)
         {
 
@@ -19,5 +23,7 @@ namespace Company.API.Data
         public DbSet<Role> Roles { get; set; }
 
         public DbSet<User_Role> User_Roles { get; set; } 
+
+       public DbSet<Employee_Details> Employee_Details { get; set; }
     }
 }
