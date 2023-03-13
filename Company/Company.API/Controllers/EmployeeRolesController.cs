@@ -1,4 +1,4 @@
-﻿/*using Company.API.Models.Domain;
+﻿using Company.API.Models.Domain;
 using Company.API.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -78,4 +78,3 @@ namespace Company.API.Controllers
 
     }
 }
-*/
