@@ -29,6 +29,19 @@ namespace Company.API.Repositories
 
         }
 
+        public async Task<Employee_Details> GetById(int id)
+        {
+            string StoredProc = "exec Sp_GetEmployeeDeatilsById"+"Empid="+id;
+            var value = newCompanyDbContextcs.Employee_Details.FromSqlRaw(StoredProc);
+
+            if ((Employee_Details)value == null)
+            {
+                return null;
+            }
+
+            return (Employee_Details)value;
+        }
+
         public async  Task<IEnumerable<Employee_Details>> GetDetails()
         {
             string StoredProc = "exec Sp_GetEmployeeDeatils";

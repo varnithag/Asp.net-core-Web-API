@@ -1,4 +1,5 @@
-﻿using Company.API.Repositories;
+﻿using Company.API.Models.Domain;
+using Company.API.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,11 +25,23 @@ namespace Company.API.Controllers
             return Ok(emp);
         }
 
-      /*  [HttpGet]
-        [Route("{int:id}")]
-        public async Task<IActionResult> GetDetailsById(int id)
+        [HttpGet]
+        [Route("{id:int}")]
+          public async Task<IActionResult> GetDetailsById(int id)
+          {
+            var emp_details=await employee_DetailsRepository.GetById(id);
+            if(emp_details != null)
+            {
+                return NotFound();
+            }
+            return Ok(emp_details);
+          }
+
+        [HttpPost]
+        public async Task<IActionResult> AddEmployee(Employee_Details employee_Details)
         {
-            var emp_details=await employee_DetailsRepository.Ge
-        }*/
+            var emp= await employee_DetailsRepository.AddEmp_Details(employee_Details);
+            return Ok(emp);
+        }
     }
 }
